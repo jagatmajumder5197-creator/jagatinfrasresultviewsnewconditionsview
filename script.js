@@ -133,7 +133,6 @@ document.getElementById('classSelect').addEventListener('change', function () {
   if (!cls) return;
 
   const students = allStudents.filter(s => String(s.CLASS) === String(cls));
-
   students.sort((a, b) => safeNum(a.ROLL) - safeNum(b.ROLL));
 
   students.forEach(student => {
