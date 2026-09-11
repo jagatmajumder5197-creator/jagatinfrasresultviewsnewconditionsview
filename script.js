@@ -162,7 +162,6 @@ function showResult() {
 
   renderResult(student);
 
-  // Hide control panel so the result pops directly onto screen
   document.getElementById('controlPanel').classList.add('hidden');
   document.getElementById('printWrapper').classList.remove('hidden');
   window.scrollTo({ top: 0, behavior: 'instant' });
