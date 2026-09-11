@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHRIPUR KINDERGARTEN SCHOOL - Marksheet Generator</title>
+  <title>SHRIPUR KINDERGARTEN SCHOOL</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
@@ -12,7 +12,8 @@
     <div class="control-container">
       <img src="Logo_Jagat.png" alt="School Logo" class="control-logo">
       <h1>SHRIPUR KINDERGARTEN SCHOOL</h1>
-      <h2>Marksheet Generator - 2nd Summative Evaluation 2026</h2>
+      <div class="brand-sub">Jagat Infrastructure & Algorithm</div>
+      <h2>2<sup>Nd</sup> Summative Evaluation - 2026</h2>
       <div class="loader-wrap" id="loaderWrap">
         <div class="loader"></div>
         <p>Loading student data...</p>
@@ -25,134 +26,141 @@
         <select id="studentSelect" disabled>
           <option value="">SELECT STUDENT</option>
         </select>
-        <button id="viewResultBtn" disabled>Generate Marksheet</button>
+        <button id="viewResultBtn" disabled>View Result</button>
       </div>
     </div>
   </div>
+
   <div class="print-wrapper hidden" id="printWrapper">
     <div class="marksheet" id="marksheet">
-      <div class="top-header">
-        <div class="header-logo-row">
-          <img src="Logo_Jagat.png" alt="School Logo" class="marksheet-logo">
-          <div class="header-center">
-            <h1>SHRIPUR KINDERGARTEN SCHOOL</h1>
-            <h2>2<sup>Nd</sup> Summative Evaluation - 2026</h2>
-            <h3>PROGRESS REPORT</h3>
+      <div class="top-section">
+        <div class="top-header">
+          <div class="header-logo-row">
+            <img src="Logo_Jagat.png" alt="School Logo" class="marksheet-logo">
+            <div class="header-center">
+              <h1>SHRIPUR KINDERGARTEN SCHOOL</h1>
+              <h2>2<sup>Nd</sup> Summative Evaluation - 2026</h2>
+              <h3>PROGRESS REPORT</h3>
+            </div>
+            <img src="Images/qr.png" alt="QR Code" class="marksheet-logo">
           </div>
-          <img src="Images/qr.png" alt="QR Code" class="marksheet-logo">
         </div>
-      </div>
-      <div class="blue-layer"></div>
-      <div class="info-section">
-        <div class="student-info">
-          <table class="student-table">
-            <tr>
-              <td class="label-cell">Student's Name</td>
-              <td class="value-cell" id="studentName"></td>
-            </tr>
-            <tr>
-              <td class="label-cell">Guardian's Name</td>
-              <td class="value-cell" id="fatherName"></td>
-            </tr>
-            <tr>
-              <td class="label-cell">Class &amp; Section</td>
-              <td class="value-cell" id="studentClass"></td>
-            </tr>
-            <tr>
-              <td class="label-cell">Roll Number</td>
-              <td class="value-cell" id="rollNumber"></td>
-            </tr>
-          </table>
+        <div class="blue-layer"></div>
+        <div class="info-section">
+          <div class="student-info">
+            <table class="student-table">
+              <tr>
+                <td class="label-cell">Student's Name</td>
+                <td class="value-cell" id="studentName"></td>
+              </tr>
+              <tr>
+                <td class="label-cell">Guardian's Name</td>
+                <td class="value-cell" id="fatherName"></td>
+              </tr>
+              <tr>
+                <td class="label-cell">Class &amp; Section</td>
+                <td class="value-cell" id="studentClass"></td>
+              </tr>
+              <tr>
+                <td class="label-cell">Roll Number</td>
+                <td class="value-cell" id="rollNumber"></td>
+              </tr>
+            </table>
+          </div>
+          <div class="grading-box">
+            <div class="grading-title">Letter Grading</div>
+            <table class="grading-table">
+              <thead>
+                <tr>
+                  <th>Range</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>90-100</td><td>AA</td></tr>
+                <tr><td>80-89</td><td>A+</td></tr>
+                <tr><td>60-79</td><td>A</td></tr>
+                <tr><td>45-59</td><td>B+</td></tr>
+                <tr><td>35-44</td><td>B</td></tr>
+                <tr><td>25-34</td><td>C</td></tr>
+                <tr><td>Below 25</td><td>D</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="grading-box">
-          <div class="grading-title">Letter Grading</div>
-          <table class="grading-table">
+        <h4 class="assessment-title">Assessment of Academic Areas</h4>
+        <div class="table-container">
+          <table class="result-table">
             <thead>
               <tr>
-                <th>Range</th>
+                <th rowspan="2" class="subject-header">Compulsory<br>Subjects</th>
+                <th colspan="3" class="section-header">Full Marks</th>
+                <th class="spacer-col"></th>
+                <th colspan="5" class="section-header">Obtained Marks</th>
+              </tr>
+              <tr>
+                <th>Written</th>
+                <th>Oral</th>
+                <th>Total</th>
+                <th class="spacer-col"></th>
+                <th>Written</th>
+                <th>Oral</th>
+                <th>Total</th>
+                <th>%</th>
                 <th>Grade</th>
               </tr>
             </thead>
-            <tbody>
-              <tr><td>90-100</td><td>AA</td></tr>
-              <tr><td>80-89</td><td>A+</td></tr>
-              <tr><td>60-79</td><td>A</td></tr>
-              <tr><td>45-59</td><td>B+</td></tr>
-              <tr><td>35-44</td><td>B</td></tr>
-              <tr><td>25-34</td><td>C</td></tr>
-              <tr><td>Below 25</td><td>D</td></tr>
-            </tbody>
+            <tbody id="subjectTableBody"></tbody>
+          </table>
+        </div>
+        <div class="summary-section">
+          <table class="final-summary">
+            <tr>
+              <th>Art</th>
+              <th>FM</th>
+              <th>Obt. Marks</th>
+              <th>%</th>
+              <th>Result</th>
+              <th>Grade</th>
+              <th>Rank</th>
+            </tr>
+            <tr>
+              <td>A<sup>+</sup></td>
+              <td id="grandFullMarks"></td>
+              <td id="grandTotal"></td>
+              <td id="grandPercentage"></td>
+              <td>Pass</td>
+              <td id="grandGrade"></td>
+              <td id="grandRank"></td>
+            </tr>
           </table>
         </div>
       </div>
-      <h4 class="assessment-title">Assessment of Academic Areas</h4>
-      <div class="table-container">
-        <table class="result-table">
-          <thead>
-            <tr>
-              <th rowspan="2" class="subject-header">Compulsory<br>Subjects</th>
-              <th colspan="3" class="section-header">Full Marks</th>
-              <th class="spacer-col"></th>
-              <th colspan="5" class="section-header">Obtained Marks</th>
-            </tr>
-            <tr>
-              <th>Written</th>
-              <th>Oral</th>
-              <th>Total</th>
-              <th class="spacer-col"></th>
-              <th>Written</th>
-              <th>Oral</th>
-              <th>Total</th>
-              <th>%</th>
-              <th>Grade</th>
-            </tr>
-          </thead>
-          <tbody id="subjectTableBody"></tbody>
-        </table>
-      </div>
-      <div class="summary-section">
-        <table class="final-summary">
-          <tr>
-            <th>Art</th>
-            <th>FM</th>
-            <th>Obt. Marks</th>
-            <th>%</th>
-            <th>Result</th>
-            <th>Grade</th>
-            <th>Rank</th>
-          </tr>
-          <tr>
-            <td>A<sup>+</sup></td>
-            <td id="grandFullMarks"></td>
-            <td id="grandTotal"></td>
-            <td id="grandPercentage"></td>
-            <td>Pass</td>
-            <td id="grandGrade"></td>
-            <td id="grandRank"></td>
-          </tr>
-        </table>
-      </div>
-      <div class="verified-note">
-        ✅ Verified by- SHRIPUR KINDERGARTEN SCHOOL
-      </div>
-      <div class="signature-section">
-        <div class="signature-block">
-          <img id="classTeacherSign" src="" alt="Class Teacher Signature" class="signature-image">
-          <div class="signature-line"></div>
-          <div class="signature-label">Class Teacher</div>
+
+      <div class="bottom-section">
+        <div class="verified-note">
+          ✅ Verified by- SHRIPUR KINDERGARTEN SCHOOL
         </div>
-        <div class="signature-block">
-          <img src="Images/jagatinfras.png" alt="Jagat Signature" class="signature-image">
-          <div class="signature-line"></div>
-          <div class="signature-label">Jagat Infrastructure &amp; Algorithm</div>
-        </div>
-        <div class="signature-block">
-          <img src="Images/principal.png" alt="Principal Signature" class="signature-image">
-          <div class="signature-line"></div>
-          <div class="signature-label">Principal</div>
+        <div class="signature-section">
+          <div class="signature-block">
+            <img id="classTeacherSign" src="" alt="Class Teacher Signature" class="signature-image">
+            <div class="signature-line"></div>
+            <div class="signature-label">Class Teacher</div>
+          </div>
+          <div class="signature-block">
+            <img src="Images/jagatinfras.png" alt="Jagat Signature" class="signature-image">
+            <div class="signature-line"></div>
+            <div class="signature-label">Jagat Infrastructure &amp; Algorithm</div>
+          </div>
+          <div class="signature-block">
+            <img src="Images/principal.png" alt="Principal Signature" class="signature-image">
+            <div class="signature-line"></div>
+            <div class="signature-label">Principal</div>
+          </div>
         </div>
       </div>
     </div>
+
     <div class="action-buttons">
       <button onclick="window.print()" class="print-btn">🖨️ Print Marksheet</button>
       <button onclick="downloadPDF()" class="pdf-btn">⬇️ Download PDF</button>
