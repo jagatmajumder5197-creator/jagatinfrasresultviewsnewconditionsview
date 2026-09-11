@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -8,11 +8,11 @@
 }
 
 :root {
-  --gold-text: #816d3b;
+  --gold-text: #705b22;
   --gold-border: #9e8952;
   --mint-bg: #dcece5;
   --mint-light: #e8f3ed;
-  --table-border: #a2bca8;
+  --table-border: #8fae97;
   --text-dark: #122117;
   --text-black: #000000;
   --maroon: #801b1b;
@@ -21,27 +21,26 @@
 
 html, body {
   width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
-  background: #ffffff;
+  background: #f0f4f2;
   color: var(--text-dark);
 }
 
 body {
-  background: #f5f5f5;
   padding: 20px;
 }
 
+/* ---------------- CONTROL PANEL ---------------- */
 .control-panel {
   width: 100%;
-  max-width: 420px;
-  margin: 0 auto 30px;
+  max-width: 440px;
+  margin: 20px auto 30px;
   background: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid rgba(158, 137, 82, 0.3);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 28px 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(158, 137, 82, 0.4);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .control-container {
@@ -49,25 +48,34 @@ body {
 }
 
 .control-logo {
-  width: 50px;
-  height: 50px;
+  width: 65px;
+  height: 65px;
   object-fit: contain;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .control-panel h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 700;
-  color: var(--gold-text);
+  color: var(--text-dark);
   margin-bottom: 4px;
+  letter-spacing: 0.5px;
+}
+
+.brand-sub {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-text);
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
 }
 
 .control-panel h2 {
-  font-size: 11px;
+  font-size: 15px;
   color: var(--text-dark);
-  font-weight: 500;
-  margin-bottom: 16px;
+  font-weight: 600;
+  margin-bottom: 22px;
 }
 
 .loader-wrap {
@@ -76,13 +84,13 @@ body {
   align-items: center;
   gap: 8px;
   margin-bottom: 16px;
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-dark);
 }
 
 .loader {
-  width: 24px;
-  height: 24px;
+  width: 28px;
+  height: 28px;
   border: 3px solid #e0e0e0;
   border-top-color: var(--maroon);
   border-radius: 50%;
@@ -97,8 +105,8 @@ body {
   background: #fde8e8;
   color: #9b1c1c;
   padding: 12px;
-  border-radius: 4px;
-  font-size: 12px;
+  border-radius: 6px;
+  font-size: 13px;
   margin-bottom: 16px;
 }
 
@@ -109,57 +117,65 @@ body {
 .control-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.control-group select,
-.control-group button {
-  width: 100%;
-  height: 38px;
-  border-radius: 5px;
-  border: 1px solid var(--table-border);
-  font-size: 13px;
-  font-weight: 500;
-  padding: 0 12px;
+  gap: 14px;
 }
 
 .control-group select {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  border: 1.5px solid var(--table-border);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 15px;
   outline: none;
   background: #ffffff;
   color: var(--text-dark);
   cursor: pointer;
+  text-align: center;
+  text-align-last: center;
+  -moz-text-align-last: center;
+  letter-spacing: 0.5px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.03);
 }
 
 .control-group button {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
   border: none;
   background: var(--maroon);
   color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
-  transition: opacity 0.2s;
-  font-weight: 600;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 10px rgba(128, 27, 27, 0.25);
 }
 
 .control-group button:hover:not(:disabled) {
-  opacity: 0.9;
+  background: #681414;
 }
 
 .control-group button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+  box-shadow: none;
 }
 
+/* ---------------- MARKSHEET DISPLAY ---------------- */
 .print-wrapper {
   width: 210mm;
-  height: 297mm;
   margin: 0 auto;
   background: #ffffff;
-  position: relative;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.15);
 }
 
 .marksheet {
   width: 210mm;
   height: 297mm;
-  padding: 30px 35px;
+  padding: 40px 45px;
   background-image: url('Images/bg.png');
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -169,25 +185,26 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   overflow: hidden;
 }
 
 .top-header {
-  margin-bottom: 12px;
-  padding-bottom: 8px;
-  border-bottom: 1.5px solid rgba(158, 137, 82, 0.2);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1.5px solid rgba(158, 137, 82, 0.3);
 }
 
 .header-logo-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 15px;
 }
 
 .marksheet-logo {
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -195,69 +212,63 @@ body {
 .header-center {
   flex: 1;
   text-align: center;
-  padding: 0 8px;
 }
 
 .header-center h1 {
   font-family: 'Playfair Display', serif;
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 700;
   color: var(--maroon);
-  letter-spacing: 0.3px;
-  line-height: 1.1;
+  letter-spacing: 0.5px;
+  line-height: 1.15;
   text-transform: uppercase;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .header-center h2 {
-  font-size: 11px;
+  font-size: 13px;
   color: var(--text-dark);
-  font-weight: 500;
-  margin: 2px 0;
+  font-weight: 600;
+  margin: 3px 0;
 }
 
 .header-center h2::before,
 .header-center h2::after {
   content: " ❦ ";
   color: var(--gold-text);
-  font-size: 10px;
+  font-size: 11px;
 }
 
 .header-center h3 {
   display: inline-block;
   background: linear-gradient(180deg, #d8a84e 0%, #b88628 100%);
   color: #000000;
-  font-size: 10px;
-  font-weight: 600;
-  padding: 3px 18px;
-  letter-spacing: 0.8px;
-  margin-top: 3px;
-  border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 22px;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  border-radius: 3px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .blue-layer {
   width: 100%;
-  height: 8px;
+  height: 9px;
   background-color: var(--blue-accent);
-  margin: 10px 0;
+  margin: 12px 0 16px 0;
   border-radius: 2px;
 }
 
 .info-section {
   display: flex;
-  gap: 10px;
-  margin: 12px 0;
-  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 16px;
+  align-items: stretch;
 }
 
 .student-info {
   flex: 1;
-}
-
-.grading-box {
-  width: 95px;
-  flex-shrink: 0;
 }
 
 .student-table,
@@ -270,15 +281,15 @@ body {
 
 .student-table td {
   border: 1px solid var(--table-border);
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--text-black);
   background: #ffffff;
 }
 
 .student-table td.label-cell {
-  padding: 5px 8px;
-  width: 42%;
+  padding: 7px 10px;
+  width: 38%;
   background: var(--mint-bg);
   color: var(--text-dark);
   font-weight: 600;
@@ -286,31 +297,36 @@ body {
 }
 
 .student-table td.value-cell {
-  padding: 5px 8px;
+  padding: 7px 12px;
   text-align: left;
-  font-weight: 500;
+  font-weight: 600;
+}
+
+.grading-box {
+  width: 115px;
+  flex-shrink: 0;
 }
 
 .grading-title {
   text-align: center;
-  font-size: 8px;
-  font-weight: 600;
+  font-size: 9px;
+  font-weight: 700;
   color: var(--text-dark);
   background: var(--mint-bg);
   border: 1px solid var(--table-border);
   border-bottom: none;
-  padding: 2px 3px;
+  padding: 3px 4px;
   text-transform: uppercase;
-  letter-spacing: 0.2px;
+  letter-spacing: 0.3px;
 }
 
 .grading-table th,
 .grading-table td {
   border: 1px solid var(--table-border);
-  padding: 2px 3px;
-  font-size: 7px;
+  padding: 3px 4px;
+  font-size: 8px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--text-black);
   background: #ffffff;
   line-height: 1.2;
@@ -319,69 +335,63 @@ body {
 .grading-table th {
   background: var(--mint-bg);
   color: var(--text-dark);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .assessment-title {
-  margin: 12px 0 8px 0;
+  margin: 16px 0 10px 0;
   text-align: center;
   font-family: 'Playfair Display', serif;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--text-dark);
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
 }
 
 .assessment-title::before,
 .assessment-title::after {
   content: " 〜 ";
   color: var(--gold-text);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .table-container {
-  margin: 8px 0;
-  overflow: hidden;
+  margin: 10px 0;
 }
 
 .result-table th,
 .result-table td {
   border: 1px solid var(--table-border);
-  padding: 5px 6px;
+  padding: 7px 8px;
   text-align: center;
-  font-size: 10px;
+  font-size: 11.5px;
   font-weight: 500;
   color: var(--text-black);
   background: #ffffff;
-  line-height: 1.2;
+  line-height: 1.25;
 }
 
 .result-table th {
   background: var(--mint-bg);
   color: var(--text-dark);
-  font-weight: 600;
-  padding: 6px 6px;
-  font-size: 10px;
-}
-
-.result-table th.subject-header,
-.result-table th.section-header {
-  font-size: 10px;
+  font-weight: 700;
+  padding: 8px 6px;
+  font-size: 11.5px;
 }
 
 .result-table td:first-child {
   text-align: left;
-  padding-left: 8px;
+  padding-left: 10px;
   font-weight: 600;
   color: var(--text-dark);
   white-space: nowrap;
-  width: 28%;
+  width: 26%;
   background: #fafafa;
 }
 
 .result-table th.spacer-col,
 .result-table td.spacer-col {
-  width: 5px;
+  width: 4px;
   padding: 0;
   border-left: 1.5px solid #000000;
   border-right: 1.5px solid #000000;
@@ -394,15 +404,15 @@ body {
 }
 
 .summary-section {
-  margin: 10px 0;
+  margin: 14px 0;
 }
 
 .final-summary th {
   background: var(--mint-bg);
   color: var(--text-dark);
-  font-weight: 600;
-  font-size: 10px;
-  padding: 6px 6px;
+  font-weight: 700;
+  font-size: 11.5px;
+  padding: 8px 8px;
   border: 1px solid var(--table-border);
   line-height: 1.2;
 }
@@ -411,31 +421,35 @@ body {
   background: #ffffff;
   color: var(--text-black);
   font-weight: 700;
-  font-size: 10px;
-  padding: 5px 6px;
+  font-size: 12px;
+  padding: 7px 8px;
   border: 1px solid var(--table-border);
   text-align: center;
   line-height: 1.2;
 }
 
+.bottom-section {
+  margin-top: 15px;
+}
+
 .verified-note {
-  margin: 8px 0;
-  padding: 4px 8px;
+  margin-bottom: 25px;
+  padding: 6px 12px;
   background: var(--mint-bg);
   border: 1px solid var(--table-border);
-  border-radius: 2px;
+  border-radius: 3px;
   text-align: center;
   color: var(--text-dark);
-  font-weight: 600;
-  font-size: 9px;
+  font-weight: 700;
+  font-size: 11px;
 }
 
 .signature-section {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-top: 14px;
-  gap: 8px;
+  gap: 20px;
+  padding-bottom: 10px;
 }
 
 .signature-block {
@@ -444,61 +458,53 @@ body {
 }
 
 .signature-image {
-  height: 22px;
-  max-width: 70px;
+  height: 40px;
+  max-width: 100px;
   object-fit: contain;
-  margin: 0 auto 2px auto;
+  margin: 0 auto 4px auto;
   display: block;
 }
 
 .signature-line {
   border-top: 1.5px solid var(--text-black);
-  margin: 2px 0;
-  min-height: 1px;
+  margin: 4px 0;
 }
 
 .signature-label {
-  font-size: 8px;
-  font-weight: 600;
+  font-size: 10px;
+  font-weight: 700;
   color: var(--text-dark);
-  padding-top: 1px;
 }
 
 .action-buttons {
   display: flex;
   justify-content: center;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 15px;
+  margin: 25px 0 40px 0;
   flex-wrap: wrap;
 }
 
 .action-buttons button {
-  padding: 10px 16px;
+  padding: 12px 22px;
   border: 1px solid #82bda5;
-  border-radius: 4px;
+  border-radius: 6px;
   background: #c3e2d5;
   color: #103322;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .action-buttons button:hover {
-  background: #b0dcc7;
-}
-
-.print-btn:active,
-.pdf-btn:active,
-.back-btn:active {
-  transform: scale(0.98);
+  background: #a9d9c3;
 }
 
 @media print {
   @page {
     size: 210mm 297mm;
     margin: 0;
-    padding: 0;
   }
 
   html, body {
@@ -519,35 +525,17 @@ body {
     height: 297mm !important;
     margin: 0 !important;
     padding: 0 !important;
-    background: #ffffff !important;
+    box-shadow: none !important;
   }
 
   .marksheet {
     width: 210mm !important;
     height: 297mm !important;
-    padding: 30px 35px !important;
+    padding: 40px 45px !important;
     margin: 0 !important;
-    box-shadow: none !important;
     background-image: url('Images/bg.png') !important;
     background-size: 100% 100% !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
-    page-break-inside: avoid !important;
-    page-break-after: avoid !important;
-  }
-
-  .student-table td,
-  .result-table td,
-  .final-summary td,
-  .grading-table td {
-    page-break-inside: avoid !important;
-  }
-
-  tr {
-    page-break-inside: avoid !important;
-  }
-
-  table {
-    page-break-inside: avoid !important;
   }
 }
