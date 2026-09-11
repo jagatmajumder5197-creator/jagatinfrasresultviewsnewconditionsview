@@ -161,8 +161,11 @@ function showResult() {
   }
 
   renderResult(student);
+
+  // Hide control panel so the result pops directly onto screen
+  document.getElementById('controlPanel').classList.add('hidden');
   document.getElementById('printWrapper').classList.remove('hidden');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
 
 function getGrade(percent) {
@@ -308,8 +311,10 @@ function downloadPDF() {
 
 function backToSelect() {
   document.getElementById('printWrapper').classList.add('hidden');
+  document.getElementById('controlPanel').classList.remove('hidden');
   document.getElementById('studentSelect').value = '';
   document.getElementById('classSelect').value = '';
   document.getElementById('classTeacherSign').src = '';
   document.getElementById('classTeacherSign').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'instant' });
 }
