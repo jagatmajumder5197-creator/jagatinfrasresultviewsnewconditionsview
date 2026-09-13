@@ -181,21 +181,30 @@ function getGrade(percent) {
 function getFmBreakdown(fm, writtenVal, studentClass, subject) {
   if (fm === 100) return { written: 90, oral: 10 };
   if (fm === 25) return { written: '', oral: 25 };
+  
   if (fm === 50) {
-    const wt = String(writtenVal || '').trim().toUpperCase();
-    if (wt === 'N') return { written: '', oral: 50 };
-    
-    const specialClasses = ['UKG_A', 'UKG_B', 'I (A)', 'I (B)'];
-    const isHindi = (subject === 'HN' || subject === 'HINDI');
-    
-    if (specialClasses.includes(String(studentClass)) && isHindi) {
+
+    const gkClasses = ['NUR_A', 'NUR_B', 'LKG_A', 'LKG_B'];
+    const isGk = (sub === 'GK' || sub === 'GK');
+
+    if (gkClasses.includes(cls) && isGk) {
+      return { written: '', oral: 50 };
+    }
+
+    const hindiClasses = ['UKG_A', 'UKG_B', 'I (A)', 'I (B)'];
+    const isHindi = (sub === 'HN' || sub === 'HINDI');
+
+    if (hindiClasses.includes(cls) && isHindi) {
       return { written: 40, oral: 10 };
     }
     
     return { written: 45, oral: 5 };
   }
+
   return { written: fm, oral: 0 };
 }
+
+
 
 function calculateRank(cls, studentId) {
   const classStudents = allStudents
